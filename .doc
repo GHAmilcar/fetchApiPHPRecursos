@@ -1,0 +1,43 @@
+1. lo primero que haremos es configurar la base de datos.
+
+2. vamos a nuestro controlador a generar las consultas que necesitaremos 
+    2.1 Creamos una clase luego heredamos de conexion.
+    2.2 Creamos todas las funciones que ocuparemos (Estas funciones tendran las consultas SQL)
+    2.3 ejecutamos nuestra funcion protegida conexion de nuestra clase padre y le decimos que nos prepare
+        esa conexion para una nueva consulta sql.
+    2.4 ejecutamos nuestra sentencia, y luego retornamos un arreglo de los datos obtenidos.
+    2.5 Nos dirigimos a la vista, donde queremos usar nuestra funcion, instanceamos primero nuestro archivo
+        conexion, luego nuestro controlador, y despues guardamos nuestra funcion en una variable para pintarla
+        en un foreach
+    2.5 Agregamos un evento, onclick este lo haremos para cargar desde javaScript los datos y editarlos o eliminarlos
+
+3. Para la funcion insertar datos lo haremos con fetchApi(Async).
+    3.1 lo primero agregarle un id al formulario de donde tomaremos los datos a ingresar.
+    3.2 Creamos un archivo que tendra todas las funciones y hacemos la referencia en nuestro archivo donde esta la vista
+    3.3 En el archivo Js primero vamos a obtener los datos del formulario; lo haremos de la siguiente manera
+    3.4 Traemos los datos almacenando en una constante el formulario con querySelector y le pasamos el id de nuestro formulario
+    3.5 le decimos que cada que le demos un click le agregaremos un addEventListener con submit y hacemos una funcion anonima
+        3.5.1 Ejemplo
+                const formularioX = document.querySelector("#form");
+                formularioX.addEventListener('submit', (e) =>{e.preventDefault
+                
+                }); // el e.preventDefault nos permite que no se refresque la pagina
+    3.6 Capturamos los datos del formulario
+        3.5.2 const formularioX = document.querySelector("#form");
+        formularioX.addEventListener('submit', (e) =>{e.preventDefault
+                const datos = new ForrmData(document.getElementById('form')); // estamos guardando la informacion del formulario en una constante que llamamos
+                                                                                 datos
+                var nombre = datos.get('nombre');   // aqui estamos almacenando la propiedad name de cada input en su respectiva variable
+                var apellido = datos.get('apellido');
+                var sexo = datos.get('sexo');
+                etc...
+        }); 
+        3.5.3 Al tener capturados todos los datos que queremos guardar en la base de datos vamos a enviarlos 
+              lo haremos primero estableciendo la ruta a la que enviaremos la informacion.
+              var url = "./modelo/ejecutarconsultas.php";
+              luego utilizaremos fetch; enviandole la url consultando los datos que tengamos en la ruta
+              Ejemplo.
+              fetch(url,{
+                
+              })
+            
