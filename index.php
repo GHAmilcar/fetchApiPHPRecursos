@@ -36,6 +36,10 @@
     <div class="container" id="mensajes"></div>
     <br>
     <div class="container">
+        <a href="views/productsView.php"><button class="btn btn-warning">Productos</button></a>
+    </div>
+    <br>
+    <div class="container">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -52,7 +56,7 @@
                 require_once "controlador/ConsultasController.php";
                 $sentencia = new consultas();
                 $mostrardatos = $sentencia->select_persona();
-                var_dump(json_encode($mostrardatos));
+                var_dump($mostrardatos);
                 foreach($mostrardatos as $res)
                 {
                     $id = $res["idpersona"];

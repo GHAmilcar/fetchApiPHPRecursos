@@ -141,8 +141,7 @@ const editar = (id) => {
             }
             
         }
-
-
+        
         Swal.fire({
             title: 'Actualizar información',
             html: `

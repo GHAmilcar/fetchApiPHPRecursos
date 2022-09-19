@@ -6,7 +6,7 @@
         case 'guardar':
             $nombre = $_POST['nombre'];
             $apellidos = $_POST['apellidos'];
-            $sexo =$_POST['sexo'];
+            $sexo =$_POST['sexo'];  
             $consultas = new consultas();
             $ejecutar = $consultas->insert_persona($nombre,$apellidos,$sexo);
             echo json_encode($ejecutar);

@@ -1,4 +1,4 @@
-1. lo primero que haremos es configurar la base de datos.
+/* 1. lo primero que haremos es configurar la base de datos.
 
 2. vamos a nuestro controlador a generar las consultas que necesitaremos 
     2.1 Creamos una clase luego heredamos de conexion.
@@ -38,6 +38,12 @@
               luego utilizaremos fetch; enviandole la url consultando los datos que tengamos en la ruta
               Ejemplo.
               fetch(url,{
-                
+                method: 'post',
+                body:datos
               })
-            
+              .then (data => data.json())
+              .then (data => {
+                console.log("Success", data);
+              })
+              
+            */
