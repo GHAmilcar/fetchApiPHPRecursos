@@ -155,7 +155,6 @@ const editar = (id) => {
                 <hr>
                 ${sex}
               </form>  
-            
             `,
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
